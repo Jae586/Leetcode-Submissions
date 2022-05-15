@@ -14,12 +14,13 @@
  * }
  */
 class Solution {
-    List<Integer>ret = new LinkedList<>();
+            List<Integer> ret = new LinkedList<>();
     public List<Integer> preorderTraversal(TreeNode root) {
-        helper(root);
+       helper(root);
         return ret;
     }
-    private void helper(TreeNode root){
+   
+    public void helper(TreeNode root){
         if (root == null) return;
         ret.add(root.val);
         helper(root.left);
