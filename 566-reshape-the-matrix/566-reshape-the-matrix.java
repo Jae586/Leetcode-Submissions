@@ -1,25 +1,25 @@
 class Solution {
     public int[][] matrixReshape(int[][] mat, int r, int c) {
-       int row = mat.length;
-        int column = mat[0].length;
-        if (row*column != r*c) return mat;
+      int row = mat.length;
+        int column =mat[0].length;
+         if (r*c != row*column) return mat;
         
-        int[][] answerArr = new int[r][c];
-        int row_num = 0;
-        int column_num =0;
+        int rowNum =0;
+        int colNum =0;
+        int[][] ans = new int[r][c];
+        
         for (int i=0; i<row; i++){
             for (int j=0; j<column; j++){
-                answerArr[row_num][column_num]=mat[i][j];
-                column_num++;
-                if (column_num == c){
-                    column_num =0;
-                    row_num++;
-                    }
+                ans[rowNum][colNum] = mat[i][j];
+                colNum ++;
+                if (colNum == c){
+                    colNum =0;
+                    rowNum++;
                 }
-            
             }
-        return answerArr;
+            
         }
-    
+    return ans;
+    }
     
 }
