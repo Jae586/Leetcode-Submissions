@@ -1,44 +1,45 @@
 class MyQueue {
-    Stack<Integer> popper = new Stack<>();
+Stack <Integer> popper = new Stack<>();
     Stack<Integer> pusher = new Stack<>();
     public MyQueue() {
         
     }
     
     public void push(int x) {
-       pusher.push(x);
+      pusher.push(x);
     }
     private void converter(){
-        int size = pusher.size();
+        int size =pusher.size();
         if (popper.isEmpty()){
             for (int i=0; i<size; i++){
-                popper.push(pusher.pop());
+            popper.push(pusher.pop());
             }
         }
+        
     }
+   
  
     
     public int pop() {
-            if (popper.isEmpty()){
-                converter();
-            } 
+        if (popper.isEmpty()){
+            converter();
+        }
        return popper.pop();
     }
     
     public int peek() {
          if (popper.isEmpty()){
-                converter();
-            } 
+             converter();
+         }
         return popper.peek();
       
     }
     
     public boolean empty() {
-         if (popper.isEmpty()){
-                return pusher.isEmpty();
-            } 
+         if (popper.isEmpty()) return pusher.isEmpty();
+        
         return popper.isEmpty();
-    }
+}
 }
 
 /**
