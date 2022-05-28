@@ -14,15 +14,18 @@
  * }
  */
 class Solution {
-    List<Integer> ret = new LinkedList<>();
+        List<Integer> ret = new LinkedList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
         helper(root,ret);
         return ret;
     }
-    public void helper(TreeNode root, List<Integer> ret){
-        if (root == null) return;
+    public void helper(TreeNode root, List ret){
+        if (root == null ) return;
         helper(root.left, ret);
         ret.add(root.val);
         helper(root.right, ret);
     }
+
+    
+
 }
