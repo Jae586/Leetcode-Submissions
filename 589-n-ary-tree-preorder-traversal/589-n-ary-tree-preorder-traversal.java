@@ -19,19 +19,19 @@ class Node {
 
 class Solution {
     public List<Integer> preorder(Node root) {
-       LinkedList<Node> list = new LinkedList<>();
+        LinkedList<Node>list = new LinkedList<>();
         LinkedList<Integer> finalL = new LinkedList<>();
-        if (root == null) return finalL;
         
+        if (root == null) return finalL;
         list.add(root);
-        while (!list.isEmpty()){
-        Node node =list.pollLast();
+        
+        while(!list.isEmpty()){
+            Node node = list.pollLast();
             finalL.add(node.val);
             Collections.reverse(node.children);
-            for (Node child: node.children){
+            for (Node child : node.children)
                 list.add(child);
-            }
-        
+            
         }
         return finalL;
     }
