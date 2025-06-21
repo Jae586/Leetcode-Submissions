@@ -7,11 +7,11 @@ class Solution {
         while(left < right){
             char le = s.charAt(left);
             char ri = s.charAt(right);
-            while (!Character.isLetterOrDigit(le)){
+            while (!Character.isLetterOrDigit(le) && left <right){
                 left++; 
                  le = s.charAt(left);
             }
-            while (!Character.isLetterOrDigit(ri)){
+            while (!Character.isLetterOrDigit(ri) && left <right){
                 right--;
                  ri = s.charAt(right);
             }
